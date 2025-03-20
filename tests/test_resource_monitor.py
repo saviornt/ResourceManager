@@ -117,4 +117,52 @@ class TestResourceMonitor:
         
         # Verify NVML shutdown was called if context exists
         if monitor._nvml_context:
-            monitor._nvml_context.shutdown.assert_called_once() 
+            monitor._nvml_context.shutdown.assert_called_once()
+    
+    def test_error_handling(self):
+        """Test error handling in ResourceMonitor."""
+        monitor = ResourceMonitor()
+        
+        # Test CPU percent error handling
+        with patch('psutil.cpu_percent', side_effect=Exception("CPU measurement error")):
+            # Should handle the error and return a default value
+            cpu_percent = monitor.get_cpu_percent()
+            assert cpu_percent == 0.0
+        
+        # Test memory usage error handling
+        with patch('psutil.virtual_memory', side_effect=Exception("Memory measurement error")):
+            # Should handle the error and return a default value
+            memory_usage = monitor.get_memory_usage_mb()
+            assert memory_usage == 0.0
+        
+        # Test network usage error handling
+        with patch('psutil.net_io_counters', side_effect=Exception("Network measurement error")):
+            # Should handle the error and return a default value
+            network_usage = monitor.get_network_usage_bytes_per_second()
+            assert network_usage == 0.0
+        
+        # Test concurrency in get_all_metrics by simulating slow operations
+        def slow_cpu_percent():
+            time.sleep(0.1)
+            return 50.0
+        
+        def slow_memory_usage():
+            time.sleep(0.1)
+            return 1024.0
+        
+        with patch('src.resource_monitor.ResourceMonitor.get_cpu_percent', side_effect=slow_cpu_percent):
+            with patch('src.resource_monitor.ResourceMonitor.get_memory_usage_mb', side_effect=slow_memory_usage):
+                # get_all_metrics should complete in parallel, faster than the sum of times
+                start_time = time.time()
+                metrics = monitor.get_all_metrics()
+                end_time = time.time()
+                
+                # Verify metrics were collected
+                assert 'cpu_percent' in metrics
+                assert 'memory_usage_mb' in metrics
+                
+                # In a concurrent implementation, this should be less than 0.2
+                # Disable this assertion if test runs on a slow machine
+                assert end_time - start_time < 0.15
+        
+        monitor.close() 

@@ -17,3 +17,9 @@ tests/results/*.json
 
 # Logs
 *.log
+
+# Project Management
+ProjectManagement.md
+
+# Ruff
+.ruff_cache/
