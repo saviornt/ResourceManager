@@ -10,6 +10,10 @@ dist/
 
 # Pytest
 .pytest_cache/
+tests/results/*.json
 
 # Environment
 .venv/
+
+# Logs
+*.log

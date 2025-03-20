@@ -9,9 +9,11 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
-        "psutil>=5.8.0",
-        "pydantic>=1.8.2",
-        "pynvml>=8.0.0",
+        "psutil>=7.0.0",
+        "pydantic>=2.10.6",
+        "pynvml>=12.0.0",
+        "numpy>=2.2.4",
+        "numba>=0.61.0",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

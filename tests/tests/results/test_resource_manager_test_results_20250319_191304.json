@@ -1,0 +1,65 @@
+{
+  "timestamp": "20250319_191304",
+  "module": "test_resource_manager",
+  "total_tests": 6,
+  "passed": 6,
+  "failed": 0,
+  "skipped": 0,
+  "total_duration": 0.3176140785217285,
+  "test_results": [
+    {
+      "test_id": "test_resource_manager.py::test_cpu_stress_test",
+      "name": "test_cpu_stress_test",
+      "module": "ResourceManager.tests.test_resource_manager",
+      "outcome": "passed",
+      "duration": 0.04739046096801758,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:13:04.404524"
+    },
+    {
+      "test_id": "test_resource_manager.py::test_memory_stress_test",
+      "name": "test_memory_stress_test",
+      "module": "ResourceManager.tests.test_resource_manager",
+      "outcome": "passed",
+      "duration": 0.07337498664855957,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:13:04.504583"
+    },
+    {
+      "test_id": "test_resource_manager.py::test_cuda_gpu_stress_test",
+      "name": "test_cuda_gpu_stress_test",
+      "module": "ResourceManager.tests.test_resource_manager",
+      "outcome": "passed",
+      "duration": 0.07340455055236816,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:13:04.605689"
+    },
+    {
+      "test_id": "test_resource_manager.py::test_network_io_stress_test",
+      "name": "test_network_io_stress_test",
+      "module": "ResourceManager.tests.test_resource_manager",
+      "outcome": "passed",
+      "duration": 0.0810079574584961,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:13:04.712285"
+    },
+    {
+      "test_id": "test_resource_manager.py::test_combined_stress_test",
+      "name": "test_combined_stress_test",
+      "module": "ResourceManager.tests.test_resource_manager",
+      "outcome": "passed",
+      "duration": 0.02209639549255371,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:13:04.758188"
+    },
+    {
+      "test_id": "test_resource_manager.py::test_resource_manager_stress",
+      "name": "test_resource_manager_stress",
+      "module": "ResourceManager.tests.test_resource_manager",
+      "outcome": "passed",
+      "duration": 0.0203397274017334,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:13:04.804363"
+    }
+  ]
+}

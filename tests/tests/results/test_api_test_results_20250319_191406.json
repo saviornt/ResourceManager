@@ -1,0 +1,56 @@
+{
+  "timestamp": "20250319_191406",
+  "module": "test_api",
+  "total_tests": 5,
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "total_duration": 0.04279947280883789,
+  "test_results": [
+    {
+      "test_id": "test_api.py::TestAPI::test_get_cpu_usage",
+      "name": "test_get_cpu_usage",
+      "module": "ResourceManager.tests.test_api",
+      "outcome": "passed",
+      "duration": 0.01647043228149414,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:14:06.710320"
+    },
+    {
+      "test_id": "test_api.py::TestAPI::test_get_memory_usage",
+      "name": "test_get_memory_usage",
+      "module": "ResourceManager.tests.test_api",
+      "outcome": "passed",
+      "duration": 0.00654149055480957,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:14:06.718831"
+    },
+    {
+      "test_id": "test_api.py::TestAPI::test_get_gpu_usage",
+      "name": "test_get_gpu_usage",
+      "module": "ResourceManager.tests.test_api",
+      "outcome": "passed",
+      "duration": 0.006575345993041992,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:14:06.725407"
+    },
+    {
+      "test_id": "test_api.py::TestAPI::test_get_network_usage",
+      "name": "test_get_network_usage",
+      "module": "ResourceManager.tests.test_api",
+      "outcome": "passed",
+      "duration": 0.006001472473144531,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:14:06.732439"
+    },
+    {
+      "test_id": "test_api.py::TestAPI::test_get_all_resources",
+      "name": "test_get_all_resources",
+      "module": "ResourceManager.tests.test_api",
+      "outcome": "passed",
+      "duration": 0.007210731506347656,
+      "parameters": {},
+      "timestamp": "2025-03-19T19:14:06.739650"
+    }
+  ]
+}
